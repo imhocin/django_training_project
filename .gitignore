@@ -1,0 +1,47 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*$py.class
+
+# --- Django ---
+*.sqlite3
+db.sqlite3
+/media/
+staticfiles/
+*.log
+
+# --- Environments ---
+.env
+.venv/
+venv/
+env/
+ENV/
+
+# --- VSCode ---
+.vscode/
+
+# --- Migrations ---
+**/migrations/
+!**/migrations/__init__.py
+
+# --- OS Files ---
+.DS_Store
+Thumbs.db
+
+# --- pytest / coverage / test output ---
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+*.cover
+
+# --- MyPy / Pylint / etc. ---
+.mypy_cache/
+.pyre/
+.pytype/
+
+# --- JetBrains (PyCharm) ---
+.idea/
