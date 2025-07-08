@@ -35,8 +35,25 @@
     </div>
 </nav>
 <div class="container">
-    <div class="row">
+    <div class="row mt-5">
+        <!--      <div class="col-md-6">
+                    <legend>Contact us form</legend>
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <input type="text" name="full_name" placeholder="Full name" class="form-control form-label">
+                        <input type="email" name="email" placeholder="Email" class="form-control form-label">
+                        <textarea name="message" placeholder="Message" class="form-control form-label"></textarea>
+                        <button type="submit" class="btn btn-danger">Send</button>
+                    </form>
+                </div>
+        -->
         <div class="col-md-6">
+            <legend><span class="text-danger">Django </span>Contact us form</legend>
+            <form method="post" action="">
+                {% csrf_token %}
+                {{ contact_form }}
+                <button type="submit" class="btn btn-danger">Send</button>
+            </form>
         </div>
     </div>
 </div>
