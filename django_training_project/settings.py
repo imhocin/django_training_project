@@ -1,4 +1,5 @@
 from decouple import config
+import os
 
 """
 Django settings for django_training_project project.
@@ -128,6 +129,9 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
+STATIC_ROOT = os.path.join(BASE_DIR, "statics", "static_main")
+MEDIA_ROOT = os.path.join(BASE_DIR, "statics", "media_root")
+MEDIA_DIR = "/media/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
