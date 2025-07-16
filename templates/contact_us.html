@@ -1,45 +1,5 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">mySite</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact-us">Contact us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About us</a>
-                </li>
-            </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-            <div>
-                <a class="nav-link btn btn-sm btn-primary ms-3 text-white" href="/login">Login</a>
-            </div>
-        </div>
-    </div>
-</nav>
-<div class="container">
-    <div class="row mt-5">
-        <!--      <div class="col-md-6">
+{% extends "base/base.html" %} {% load static %} {% block content %}
+<!--      <div class="col-md-6">
                     <legend>Contact us form</legend>
                     <form method="post" action="">
                         {% csrf_token %}
@@ -50,15 +10,11 @@
                     </form>
                 </div>
         -->
-        <div class="col-md-6">
-            <legend><span class="text-danger">Django </span>Contact us form</legend>
-            <form method="post" action="">
-                {% csrf_token %}
-                {{ contact_form }}
-                <button type="submit" class="btn btn-danger">Send</button>
-            </form>
-        </div>
-    </div>
+<div class="col-md-6">
+    <legend><span class="text-danger">Django </span>Contact us form</legend>
+    <form method="post" action="">
+        {% csrf_token %} {{ contact_form }}
+        <button type="submit" class="btn btn-danger">Send</button>
+    </form>
 </div>
-</body>
-</html>
+{% endblock %}
