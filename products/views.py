@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import ProductsModel
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from pprint import pprint
 
 
 # Create your views here.
@@ -18,7 +19,6 @@ def products_list_fb(request):
 
 class ProductListView(ListView):
 
-    queryset = ProductsModel.objects.all()
     template_name = "products_list.html"
 
     def get_context_data(self, **kwargs):
@@ -52,8 +52,8 @@ class ProductDetails(DetailView):
         return context
 
     def get_object(self, **kwargs):
-        id = self.kwargs.get("pk")
-        product = ProductsModel.objects.get(id=id)
+        slug = self.kwargs.get("slug")
+        product = ProductsModel.objects.get(slug=slug)
         return product
 
 

@@ -46,5 +46,8 @@ class ProductsModel(models.Model):
             self.slug = slugify(self.description)
         super().save(*args, **kwargs)
 
+    def product_url(self):
+        return f"/products/details-cb/{self.slug}"
+
     def __str__(self):
         return self.title

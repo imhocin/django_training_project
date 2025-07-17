@@ -1,11 +1,11 @@
 {% load static %}
 <!DOCTYPE html>
 <head>
-    {% include "base/header.html" %}
+    {% include "base/header.html" with title="mySite" %}
 </head>
 <html lang="en">
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">{% include "base/navbar.html" %}</nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">{% include "base/navbar.html" with siteName="mySite" %}</nav>
         <div class="container container-fluid">
             <div class="row">{% block content %} {% endblock content %}</div>
         </div>

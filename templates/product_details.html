@@ -1,13 +1,16 @@
 {% extends "base/base.html" %}
 {% load static %}
 {% block content %}
-<div class="col-md-12 text-center"><h1>{{ page_title }}</h1></div>
+<div class="col-md-12 text-center">
+<h1>{{ ali }}</h1>
+<h1>{{ page_title }}</h1>
+</div>
 <div class="row">                
-    <div class="col-md-4 border bg-secondary">
+    <div class="col-md-4">
         <img src="{{ object.image.url }}" alt="{{ object.title }}" style="width:200px; height:200px; border: solid 2px black; border-radius : 20px">
         <h6 class="bg-danger">Number<h6>
-        <a href=""><h4 class="mb-4">{{ object.title }}</h4></a>
-        <h5>{{ object.desciption }}</h5>
+        <a href=""><h4 class="mb-4">{{ object.title|title }}</h4></a>
+        <h5>{{ object.description|truncatewords:20 }}</h5>
         <h6>{{ object.price }}</h6>
     </div>                
 </div>

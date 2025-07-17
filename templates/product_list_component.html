@@ -1,0 +1,12 @@
+<div class="card" style="width: 18rem">
+    {% if product.image.url is not None %}
+    <img src="{{ product.image.url }}" class="card-img-top mx-auto" alt="{{ product.title }}" style="width: 100%; height: 100%" />
+    {% else %}
+    <span class="label bg-danger mx-auto" style="width: 100%; height: 100%">Image</span>
+    {% endif %}
+    <div class="card-body">
+        <h5 class="card-title">{{ product.title|title }}</h5>
+        <p class="card-text">{{ product.description|truncatewords:20 }}</p>
+        <a href="{{product.product_url}}" class="btn btn-primary">show details</a>
+    </div>
+</div>

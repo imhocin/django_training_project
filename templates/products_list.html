@@ -1,15 +1,8 @@
-{% extends "base/base.html" %}
-{% load static %}
-{% block content %}
-<div class="col-md-12 text-center"><h1>{{ title }}</h1></div>        
+{% extends "base/base.html" %} {% load static %} {% block content %}
+<div class="col-md-12 text-center"><h1>{{ title }}</h1></div>
 <div class="row">
     {% for product in object_list %}
-    <div class="col-md-4 border bg-secondary">
-        <h6 class="bg-danger">Number<h6>
-        <a href="details-cb/{{ product.id }}"><h4 class="mb-4">{{ product.title }}</h4></a>
-        <h5>{{ products.price }}</h5>
-        <h6>{{ product.price }}</h6>
-    </div>
+    <div class="col-md-4">{% include "product_list_component.html" with product=product %}</div>
     {% endfor %}
 </div>
 {% endblock %}
