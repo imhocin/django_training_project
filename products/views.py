@@ -24,11 +24,16 @@ class ProductListView(ListView):
     def get_context_data(self, **kwargs):
         return super().get_context_data(**kwargs)
 
+    def get_queryset(self):
+        return ProductsModel.objects.all()
+
 
 def product_details(request, id):
 
     # product = ProductsModel.objects.get(id=id)
-    product = get_object_or_404(ProductsModel, id=id)
+    # product = get_object_or_404(ProductsModel, id=id)
+    product = ProductsModel.objects.get_object_by_id(id)
+    print(product)
     context = {
         "title": "Product Details",
         "product": product,
@@ -45,3 +50,17 @@ class ProductDetails(DetailView):
         context = super().get_context_data(**kwargs)
         context["page_title"] = "Product Details"
         return context
+
+    def get_object(self, **kwargs):
+        id = self.kwargs.get("pk")
+        product = ProductsModel.objects.get(id=id)
+        return product
+
+
+class ProductDetailsViewSlug(DetailView):
+
+    queryset = ProductsModel.objects.filter()
+    template_name = "product_details.html"
+
+    def get_context_data(self, **kwargs):
+        return super().get_context_data(**kwargs)
