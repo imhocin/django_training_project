@@ -7,6 +7,6 @@
     <div class="card-body">
         <h5 class="card-title">{{ product.title|title }}</h5>
         <p class="card-text">{{ product.description|truncatewords:20 }}</p>
-        <a href="{{product.product_url}}" class="btn btn-primary">show details</a>
+        <a href="{% url 'ProductDetails' slug=product.slug  %}" class="btn btn-primary">show details</a>
     </div>
 </div>
