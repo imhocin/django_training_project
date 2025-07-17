@@ -24,17 +24,17 @@
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
-        {% comment %} {% if request.user.is_authenticated %} {% endcomment %}
+        {% if request.user.is_authenticated %}
         <div>
             <a class="nav-link btn btn-sm btn-secondary ms-3 text-white" href="/auth/logout">logout</a>
         </div>
-        {% comment %} {% else %} {% endcomment %}
+        {% else %}
         <div>
             <a class="nav-link btn btn-sm btn-primary ms-3 text-white" href="/auth/login">Login</a>
         </div>
         <div>
             <a class="nav-link btn btn-sm btn-success ms-3 text-white" href="/auth/register">register</a>
         </div>
-        {% comment %} {% endif %} {% endcomment %}
+        {% endif %}
     </div>
 </div>
